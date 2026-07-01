@@ -10,9 +10,8 @@ export type AuthenticatedShopPageFixture = {
     authenticatedShopPage: Page;
 }
 
+// Block ad iframes
 export const test = base.extend<AuthenticatedShopPageFixture>({
-    // Block ad iframes for every test — they load async and shift the layout
-    // mid-click, and inject stray text into unrelated elements on the page.
     page: async ({ page }, use) => {
         await page.route(/doubleclick\.net|googlesyndication\.com|googleadservices\.com|pagead/, (route) => route.abort());
         await use(page);

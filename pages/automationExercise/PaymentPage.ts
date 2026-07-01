@@ -26,14 +26,6 @@ export class PaymentPage extends BasePage {
         await expect(this.page).toHaveURL('/payment');
     }
 
-    // async fillCardDetails(name: string, cardNumber: string, cvc: string, expiryMonth: string, expiryYear: string) {
-    //     await this.nameOnCardInput.fill(name);
-    //     await this.cardNumberInput.fill(cardNumber);
-    //     await this.cvcInput.fill(cvc);
-    //     await this.expiryMonthInput.fill(expiryMonth);
-    //     await this.expiryYearInput.fill(expiryYear);
-    // }
-
     async fillCardDetails(card: CardDetails) {
         await this.nameOnCardInput.fill(card.name);
         await this.cardNumberInput.fill(card.cardNumber);

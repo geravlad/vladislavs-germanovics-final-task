@@ -3,7 +3,6 @@ import { BasePage } from "./BasePage";
 
 export class ShopHomePage extends BasePage {
     //Locators
-
     readonly signUpLoginButton: Locator;
     readonly loggedInAs: Locator;
     readonly productsNavLink: Locator;
@@ -52,5 +51,4 @@ export class ShopHomePage extends BasePage {
         await expect(this.subscribeSuccessMessage).toBeVisible();
         await expect(this.subscribeSuccessMessage).toContainText('You have been successfully subscribed!');
     }
-
 }

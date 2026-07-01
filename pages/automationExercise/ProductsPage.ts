@@ -3,7 +3,6 @@ import { BasePage } from "./BasePage";
 
 export class ProductsPage extends BasePage {
     //Locators
-
     readonly productItem: Locator;
     readonly addToCartButton: Locator;
     readonly continueShoppingButton: Locator;

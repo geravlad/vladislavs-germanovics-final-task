@@ -9,7 +9,7 @@ import { ProductsPage } from '../pages/automationExercise/ProductsPage';
 import { ShopHomePage } from '../pages/automationExercise/ShopHomePage';
 import { SignupLoginPage } from '../pages/automationExercise/SignupLoginPage';
 import { ShopApiClient } from '../utils/shopApiClient';
-import { CardDetails, cardData, generateUser } from '../utils/testData';
+import { cardData, generateUser } from '../utils/testData';
 
 import {
   epic, feature, story, severity, Severity,
@@ -60,7 +60,7 @@ test.describe('TC-SHOP-002', () => {
     await story('Keyword search')
     await severity(Severity.NORMAL);
 
-    // using .fail() because products without "top" keyword appears in search result
+    // using .fail() because products without "dress" keyword appears in search result
     test.fail(true, 'automationexercise product search also matches by category, not just product name');
 
     const productsPage = new ProductsPage(page);
@@ -143,7 +143,7 @@ test.describe('TC-SHOP-004', () => {
 
     await cartPage.assertProductRowCount(0);
     await cartPage.assertEmptyCartMessageVisible();
-    await cartPage.assertOnCartPage(); //asserts page stays on same page
+    await cartPage.assertOnCartPage(); //asserts page stays on cart page
   });
 });
 

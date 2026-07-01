@@ -28,5 +28,4 @@ export class SignupLoginPage extends BasePage {
         await this.emailInput.fill(email);
         await this.signupButton.click();
     }
-
 }
